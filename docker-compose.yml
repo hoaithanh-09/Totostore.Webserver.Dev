@@ -1,0 +1,24 @@
+﻿version: '3.7'
+
+services:
+  nginx:
+    image: 'nginx-server'
+    build:
+      context: .
+      target: dev
+      dockerfile: Dockerfile
+    container_name: webserver
+    restart: unless-stopped
+    environment:
+      CERTBOT_EMAIL: 1851120014@sv.ut.edu.vn
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./ssl/nginx_secrets:/etc/letsencrypt
+    networks:
+      - totostore-network
+
+networks:
+  totostore-network:
+    external: true
