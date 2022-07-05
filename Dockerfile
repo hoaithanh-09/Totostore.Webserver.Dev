@@ -1,12 +1,12 @@
-﻿FROM jonasal/nginx-certbot:latest as dev
+FROM jonasal/nginx-certbot:latest as dev
 
 RUN mkdir -p /var/cache/nginx
 
 RUN rm -rf /var/cache/nginx/*
 
-# RUN mkdir -p /usr/share/nginx/html/poker
+RUN mkdir -p /usr/share/nginx/html/client
 
-# COPY ./web-mobile /usr/share/nginx/html/poker
+COPY ./app/client /usr/share/nginx/html/client
 
 COPY config/ /etc/nginx/conf.d/
 
