@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  totostore-ci
+
+
+variables:
+  buildConfiguration: 'Release'
+  workDir: '/home/hoaith/projects/Totostore.Webserver.Dev/'
+  clientBuild: '/home/hoaith/projects/Totostore.Frontend.Client/build'
+  
+steps:
+- script: |
+    mkdir app
+    cp -Rf $(clientBuild) app/client
+    docker-compose up --build -d
+  workingDirectory: $(workDir)
+  displayName: 'Deploy apps to webserver'
