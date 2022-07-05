@@ -6,5 +6,5 @@
 *.iml
 out
 gen
-ssl/nginx_secrets
+ssl/nginx_secrets/*
 .vscode
