@@ -17,7 +17,7 @@ variables:
   
 steps:
 - script: |
-    mkdir app
+    mkdir -p app
     cp -Rf $(clientBuild) app/client
     docker-compose up --build -d
   workingDirectory: $(workDir)
