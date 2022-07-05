@@ -16,6 +16,7 @@ services:
       - '443:443'
     volumes:
       - ./ssl/nginx_secrets:/etc/letsencrypt
+      - ./app:/usr/share/nginx/html/
     networks:
       - totostore-network
 

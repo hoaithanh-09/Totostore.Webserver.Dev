@@ -4,9 +4,9 @@ RUN mkdir -p /var/cache/nginx
 
 RUN rm -rf /var/cache/nginx/*
 
-RUN mkdir -p /usr/share/nginx/html/client
+RUN mkdir -p /usr/share/nginx/html/
 
-COPY ./app/client /usr/share/nginx/html/client
+# COPY ./app/client /usr/share/nginx/html/client
 
 COPY config/ /etc/nginx/conf.d/
 
