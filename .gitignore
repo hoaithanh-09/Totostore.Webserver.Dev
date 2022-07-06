@@ -8,3 +8,4 @@ out
 gen
 ssl/nginx_secrets/*
 .vscode
+app
